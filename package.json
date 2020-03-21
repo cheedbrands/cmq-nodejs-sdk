@@ -1,23 +1,21 @@
 {
-    "name": "cmq-nodejs-sdk",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {},
-    "keywords": [],
-    "author": "Yiyi Kang",
-    "license": "",
-    "dependencies": {
-    },
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/cheedbrands/cmq-nodejs-sdk"
-    },
-    "files": [
-      "src/",
-      "index.js",
-      "README.md",
-      "LICENSE"
-    ]
-  }
-  
+  "name": "cmq-nodejs-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Yiyi Kang",
+  "license": "",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cheedbrands/cmq-nodejs-sdk"
+  },
+  "files": [
+    "src/",
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ]
+}
