@@ -19,7 +19,7 @@ const axios = require('axios');
 //msgBody
 //topicName
 
-url = url + 'Action=PublishMessage&Nonce=1584916187&SecretId=' + TENCENT_SECRET_ID + '&Timestamp=1584916187';
+url = url + 'Action=PublishMessage&Nonce=1584917647&SecretId=' + TENCENT_SECRET_ID + '&Timestamp=1584917647';
 url = url + '&msgBody=hello&topicName=eventbus';
 
 const preSignString1 = 'GET' + url;
