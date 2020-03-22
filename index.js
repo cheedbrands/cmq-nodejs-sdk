@@ -13,6 +13,6 @@ hmac.update(str);
 console.log(hmac.digest('base64'));
 
 const signString = "C16WEtEXsD5v5tnaUMLAbZewXhI=";
-const querystring = require('querystring');
-const urlEncodeSign = querystring.stringify(signString);
+const urlencode = require('urlencode');
+const urlEncodeSign = urlencode(signString);
 console.log(urlEncodeSign);

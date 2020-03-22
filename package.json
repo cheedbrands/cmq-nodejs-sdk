@@ -7,7 +7,9 @@
   "keywords": [],
   "author": "Yiyi Kang",
   "license": "",
-  "dependencies": {},
+  "dependencies": {
+    "urlencode": "^1.1.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/cheedbrands/cmq-nodejs-sdk"
