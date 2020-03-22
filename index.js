@@ -20,7 +20,7 @@ const axios = require('axios');
 //topicName
 
 url = url + 'Action=PublishMessage&Nonce=1584917647&SecretId=' + TENCENT_SECRET_ID + '&Timestamp=1584917647';
-url = url + '&msgBody=hello&topicName=eventbus';
+url = url + '&msgBody=hello&topicName=event_bus';
 
 const preSignString1 = 'GET' + url;
 console.log('sign text:' + preSignString1);
@@ -32,6 +32,8 @@ const preSignString3 = urlencode(preSignString2);
 console.log('url encode:' + preSignString3);
 
 url = url + '&Signature=' + preSignString3;
-(async () => {
-    await axios.get(url);
-})();
+axios.get(url).then(function (response) {
+    console.log(response);
+  }).catch(function (error) {
+    console.log(error);
+  });
