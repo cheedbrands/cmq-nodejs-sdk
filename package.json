@@ -8,6 +8,7 @@
   "author": "Yiyi Kang",
   "license": "",
   "dependencies": {
+    "axios": "^0.19.2",
     "urlencode": "^1.1.0"
   },
   "repository": {

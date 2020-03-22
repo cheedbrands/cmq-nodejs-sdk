@@ -16,3 +16,7 @@ const signString = "C16WEtEXsD5v5tnaUMLAbZewXhI=";
 const urlencode = require('urlencode');
 const urlEncodeSign = urlencode(signString);
 console.log(urlEncodeSign);
+
+//const url = 'http://cmq-topic-sh.api.tencentyun.com'; //internal
+const url = 'https://cmq-topic-sh.api.qcloud.com'; // external
+const axios = require('axios');
