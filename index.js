@@ -1,22 +1,37 @@
 const crypto = require('crypto');
-const shasum = crypto.createHash('sha1');
-shasum.update('hello, here is my password');
-console.log(shasum.digest('hex'));
-
-const sha256result = crypto.createHash('sha256').update('hello, here is my password').digest('hex');
-console.log(sha256result);
-
-const secret = 'pPgfLipfEXZ7VcRzhAMIyPaU7UbQyFFx';
-const str = 'POSTcmq-queue-gz.api.tencentyun.com/v2/index.php?Action=SendMessage&Nonce=2889712707386595659&RequestClient=SDK_Python_1.3&SecretId=AKIDPcY*****CVYLn3zT&SignatureMethod=HmacSHA1&Timestamp=1534154812&clientRequestId=123***1231&delaySeconds=0&msgBody=msg&queueName=test1';
-const hmac = crypto.createHmac('sha1', secret, true);
-hmac.update(str);
-console.log(hmac.digest('base64'));
-
-const signString = "C16WEtEXsD5v5tnaUMLAbZewXhI=";
 const urlencode = require('urlencode');
-const urlEncodeSign = urlencode(signString);
-console.log(urlEncodeSign);
+
+const TENCENT_SECRET_ID = 'AKIDNccOxHLLagcW9iNILFxEG4OTVUZQjWjj';
+const TENCENT_SECRET_KEY = 'uZzGI5dw2tU17A6pqwoWyAFBtMMDyUM7';
 
 //const url = 'http://cmq-topic-sh.api.tencentyun.com'; //internal
-const url = 'https://cmq-topic-sh.api.qcloud.com'; // external
+let url = 'https://cmq-topic-sh.api.qcloud.com/v2/index.php?'; // external
 const axios = require('axios');
+// https://domain/v2/index.php?Action=PublishMessage
+// &topicName=test-topic-123
+// &msgBody=helloworld
+// &<公共请求参数></公共请求参数>
+
+//Action
+//Nonce
+//SecretId
+//Timestamp
+//msgBody
+//topicName
+
+url = url + 'Action=PublishMessage&Nonce=1584916187&SecretId=' + TENCENT_SECRET_ID + '&Timestamp=1584916187';
+url = url + '&msgBody=hello&topicName=eventbus';
+
+const preSignString1 = 'GET' + url;
+console.log('sign text:' + preSignString1);
+const hmac = crypto.createHmac('sha1', TENCENT_SECRET_KEY, true);
+hmac.update(preSignString1);
+const preSignString2 = hmac.digest('base64');
+console.log('sign encode:' + preSignString2);
+const preSignString3 = urlencode(preSignString2);
+console.log('url encode:' + preSignString3);
+
+url = url + '&Signature=' + preSignString3;
+(async () => {
+    await axios.get(url);
+})();
