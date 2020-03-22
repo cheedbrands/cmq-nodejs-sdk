@@ -11,3 +11,8 @@ const str = 'POSTcmq-queue-gz.api.tencentyun.com/v2/index.php?Action=SendMessage
 const hmac = crypto.createHmac('sha1', secret, true);
 hmac.update(str);
 console.log(hmac.digest('base64'));
+
+const signString = "C16WEtEXsD5v5tnaUMLAbZewXhI=";
+const querystring = require('querystring');
+const urlEncodeSign = querystring.stringify(signString);
+console.log(urlEncodeSign);
