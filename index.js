@@ -2,8 +2,8 @@ const crypto = require('crypto');
 const urlencode = require('urlencode');
 const moment = require('moment');
 
-const TENCENT_SECRET_ID = 'AKIDNccOxHLLagcW9iNILFxEG4OTVUZQjWjj';
-const TENCENT_SECRET_KEY = 'uZzGI5dw2tU17A6pqwoWyAFBtMMDyUM7';
+const TENCENT_SECRET_ID = '';
+const TENCENT_SECRET_KEY = '';
 
 //const url = 'http://cmq-topic-sh.api.tencentyun.com'; //internal
 let url = 'https://cmq-topic-sh.api.qcloud.com/v2/index.php?'; // external
