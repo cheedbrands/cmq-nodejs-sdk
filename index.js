@@ -1,6 +1,7 @@
 const crypto = require('crypto');
 const urlencode = require('urlencode');
 const moment = require('moment');
+const _ = require('lodash');
 
 const TENCENT_SECRET_ID = process.env.TENCENT_SECRET_ID;
 const TENCENT_SECRET_KEY = process.env.TENCENT_SECRET_KEY;
