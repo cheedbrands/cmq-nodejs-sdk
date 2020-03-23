@@ -19,9 +19,9 @@ const nowUnix = moment().unix();
 console.log('nowUnix:' + nowUnix);
 
 url = url + 'Action=PublishMessage&Nonce=' + nowUnix + '&SecretId=' + TENCENT_SECRET_ID + '&Timestamp=' + nowUnix;
-url = url + '&msgBody=hello2&topicName=event_bus';
+url = url + '&msgBody=hello100&topicName=event_bus';
 
-const preSignString1 = 'GET' + url;
+const preSignString1 = 'GET' + url.substring(8, url.length);
 console.log('sign text:' + preSignString1);
 const hmac = crypto.createHmac('sha1', TENCENT_SECRET_KEY, true);
 hmac.update(preSignString1);
